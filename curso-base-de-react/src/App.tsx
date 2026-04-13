@@ -1,12 +1,21 @@
-
+import { BrowserRouter, Route, Routes, Navigate } from "react-router";
 
 import { AppLayout } from "./shared/layout/AppLayout";
 import { Home } from "./pages/Home";
+import { About } from "./pages/About";
 
 export function App() {
   return (
-    <AppLayout>
-      <Home />
-    </AppLayout>
+    <BrowserRouter>
+      <AppLayout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/sobre' element={<About />} />
+
+          <Route path='*' element={<Navigate to='/' />} />
+        </Routes>
+        
+      </AppLayout>
+    </BrowserRouter>
   )
 }

@@ -4,6 +4,7 @@ import { TodoAPI, type ITodo } from "@/shared/services/api/TodoAPI";
 import { TodoItem } from "@/components/TodoItem";
 import { InputAdd } from "@/components/InputAdd";
 import { List } from "@/components/List";
+import { PageLayout } from "@/shared/layout/page-layout/PageLayout";
 
 
 export const Home = () => {
@@ -36,9 +37,9 @@ export const Home = () => {
       };
     
       return (
-        <div>
+        <PageLayout title='Página incial'>
           <InputAdd onAdd={handleAdd} />
-    
+
           <List>
             {list.map((listItem) => (
               <TodoItem
@@ -51,6 +52,6 @@ export const Home = () => {
               />
             ))}
           </List>
-        </div>
+        </PageLayout>
       );
 }
